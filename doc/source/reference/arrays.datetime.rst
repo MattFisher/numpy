@@ -51,9 +51,11 @@ form of the string, and can be either a :ref:`date unit <arrays.dtypes.dateunits
 :ref:`time unit <arrays.dtypes.timeunits>`. The date units are years ('Y'),
 months ('M'), weeks ('W'), and days ('D'), while the time units are
 hours ('h'), minutes ('m'), seconds ('s'), milliseconds ('ms'), and
-some additional SI-prefix seconds-based units. The `datetime64` data type
-also accepts the string "NAT", in any combination of lowercase/uppercase
-letters, for a "Not A Time" value.
+some additional SI-prefix seconds-based units.
+
+The `datetime64` data type also accepts three special strings, in any combination 
+of lowercase/uppercase letters: "NAT" for a "Not A Time" value, "today" for today's 
+date in local time, and "now" for the current UTC time.
 
 .. admonition:: Example
 
@@ -88,6 +90,16 @@ letters, for a "Not A Time" value.
 
     >>> np.datetime64('nat')
     np.datetime64('NaT')
+
+    Today:
+
+    >>> np.datetime64('today')
+    np.datetime64('2024-10-19')
+
+    Now:
+
+    >>> np.datetime64('now')
+    np.datetime64('2024-10-19T02:38:18')
 
 When creating an array of datetimes from a string, it is still possible
 to automatically select the unit from the inputs, by using the
