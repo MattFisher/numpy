@@ -92,12 +92,12 @@ date in local time, and "now" for the current UTC time.
     np.datetime64('NaT')
 
     Today:
-    >>> np.datetime64('today')
-    np.datetime64('2024-10-19')
+    >>> np.datetime64('today')  #doctest: +SKIP
+    np.datetime64('2024-10-19')  # Current date in local timezone
 
     Now:
-    >>> np.datetime64('now')
-    np.datetime64('2024-10-19T02:38:18')
+    >>> np.datetime64('now')  #doctest: +SKIP
+    np.datetime64('2024-10-19T02:38:18')  # Current UTC time
 
 When creating an array of datetimes from a string, it is still possible
 to automatically select the unit from the inputs, by using the
